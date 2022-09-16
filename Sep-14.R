@@ -12,4 +12,9 @@ library(ggplot2)
 # Plots the time vs poison data
 ggplot(df, aes(x = poison, y = time, fill = poison)) + geom_boxplot() + geom_jitter(shape = 15, color = "steelblue", position = position_jitter(0.21)) + theme_classic()
 
+# Apply the function for calculating ANOVA test
+anova_one_way <- aov(time~poison, data = df); 
+summary(anova_one_way) 
+
+
 
